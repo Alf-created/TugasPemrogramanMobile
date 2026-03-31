@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFFFF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/viewBackground"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="#3A98D4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvJoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Join Us"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Silakan isi data diri Anda untuk mendaftar akun baru."
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvJoin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tvSub">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="25dp"
+                android:background="@drawable/bg_outline_grey">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create Account"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#000000"
+                    app:hintTextColor="#000000"
+                    app:startIconDrawable="@android:drawable/ic_menu_edit"
+                    app:startIconTint="#3A98D4"
+                    app:errorTextColor="@color/errorRed"
+                    app:boxStrokeErrorColor="@color/errorRed"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Full Name"
+                        android:textColor="#000000"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#000000"
+                    app:hintTextColor="#000000"
+                    app:startIconDrawable="@android:drawable/ic_dialog_email"
+                    app:startIconTint="#3A98D4"
+                    app:errorTextColor="@color/errorRed"
+                    app:boxStrokeErrorColor="@color/errorRed"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email Address"
+                        android:textColor="#000000"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:gravity="top">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tlBirth"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.2"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:textColorHint="#000000"
+                        app:hintTextColor="#000000"
+                        app:startIconDrawable="@android:drawable/ic_menu_today"
+                        app:startIconTint="#3A98D4"
+                        app:errorTextColor="@color/errorRed"
+                        app:boxStrokeErrorColor="@color/errorRed"
+                        app:errorEnabled="true">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBirth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Birth Date"
+                            android:textColor="#000000"
+                            android:focusable="false"
+                            android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <Spinner
+                            android:id="@+id/spinnerGender"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/spinner_style"
+                            android:popupBackground="#FFFFFF" />
+                        <TextView
+                            android:id="@+id/tvGenderError"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/errorRed"
+                            android:textSize="12sp"
+                            android:layout_marginStart="4dp"
+                            android:visibility="gone"
+                            android:text="Pilih gender" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlPass"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#000000"
+                    app:hintTextColor="#000000"
+                    app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                    app:startIconTint="#3A98D4"
+                    app:errorTextColor="@color/errorRed"
+                    app:boxStrokeErrorColor="@color/errorRed"
+                    app:errorEnabled="true"
+                    app:passwordToggleEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:textColor="#000000"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tlConfirm"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#000000"
+                    app:hintTextColor="#000000"
+                    app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                    app:startIconTint="#3A98D4"
+                    app:errorTextColor="@color/errorRed"
+                    app:boxStrokeErrorColor="@color/errorRed"
+                    app:errorEnabled="true"
+                    app:passwordToggleEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirm Password"
+                        android:textColor="#000000"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                    android:id="@+id/cbAgree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terms &amp; Agreements"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnCreate"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Create Account"
+                    android:backgroundTint="#54A5D9"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="false"
+                    app:cornerRadius="15dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvBackToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already Have an Account?\nBack to Login"
+            android:textAlignment="center"
+            android:textColor="#3A98D4"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:paddingBottom="40dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintTop_toBottomOf="@id/cardForm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
